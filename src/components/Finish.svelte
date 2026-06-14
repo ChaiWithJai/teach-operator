@@ -1,12 +1,27 @@
 <script>
-  import { ui, MODULES, ACTS, clearedCount, allCleared, focusScore, maxScore, moduleGrade } from "../lib/store.svelte.js";
-  let { go, tunedCount, ask, copyHandoff, tier } = $props();
+  import { ui, MODULES, clearedCount, allCleared, focusScore, maxScore, moduleGrade, checklistCleared, checklistTotal, routineStreak, routineWeekCount, shareCardSvg, flash } from "../lib/store.svelte.js";
+  let { go, ask, copyHandoff, tier } = $props();
 
   const cleared = $derived(clearedCount());
   const score = $derived(focusScore());
   const max = $derived(maxScore());
   const won = $derived(allCleared());
+  const applied = $derived(checklistCleared());
+  const applyTotal = $derived(checklistTotal());
+  const streak = $derived(routineStreak());
+  const weekCount = $derived(routineWeekCount());
   const label = (g) => (g === "gold" ? "Gold star" : g === "pass" ? "Cleared" : "Not yet");
+
+  function downloadReportCard() {
+    const blob = new Blob([shareCardSvg()], { type: "image/svg+xml" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "adhd-copilot-hyperfocus-report-card.svg";
+    a.click();
+    URL.revokeObjectURL(url);
+    flash("Report card downloaded");
+  }
 </script>
 
 <div class="card">
@@ -36,6 +51,15 @@
   <div class="tally">
     <span>Focus points</span>
     <b>{score}<i>/{max}</i></b>
+  </div>
+
+  <div class="share-card" aria-label="Shareable Hyperfocus report card preview">
+    <div>
+      <span class="share-kicker">Hyperfocus Report Card</span>
+      <strong>{score}/{max}</strong>
+      <p>{cleared}/8 modules · {applied}/{applyTotal} actions · {streak} day streak · {weekCount}/7 routine days</p>
+    </div>
+    <button class="btn" onclick={downloadReportCard}>Download share card</button>
   </div>
 
   <div class="apprentice">
@@ -73,4 +97,33 @@
   .tally span { font-size: 11px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--charcoal-soft); }
   .tally b { font-family: var(--mono); font-size: 20px; color: var(--terracotta); }
   .tally b i { font-style: normal; font-size: 13px; color: var(--charcoal-soft); }
+  .share-card {
+    margin: 12px 0 4px;
+    padding: 16px;
+    border-radius: 16px;
+    border: 1px solid rgba(151,69,41,.25);
+    background: linear-gradient(135deg, rgba(151,69,41,.13), rgba(217,164,65,.13));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .share-kicker {
+    display: block;
+    color: var(--terracotta);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+  }
+  .share-card strong {
+    display: block;
+    font-family: var(--display);
+    font-size: 34px;
+    line-height: 1;
+    margin-top: 5px;
+    color: var(--walnut);
+  }
+  .share-card p { margin: 6px 0 0; color: var(--charcoal-soft); font-size: 13px; }
 </style>

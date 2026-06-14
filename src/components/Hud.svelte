@@ -1,11 +1,16 @@
 <script>
-  import { MODULES, ACTS, clearedCount, allCleared, focusScore, maxScore, moduleGrade, actCleared, ui, STEPS } from "../lib/store.svelte.js";
+  import { MODULES, ACTS, clearedCount, allCleared, focusScore, maxScore, moduleGrade, actCleared, ui, STEPS, checklistCleared, checklistTotal, routineStreak, routineMarks, routineWeekCount, toggleRoutineMark } from "../lib/store.svelte.js";
 
   const cleared = $derived(clearedCount());
   const score = $derived(focusScore());
   const max = $derived(maxScore());
   const pct = $derived(max ? Math.round((score / max) * 100) : 0);
   const won = $derived(allCleared());
+  const applied = $derived(checklistCleared());
+  const applyTotal = $derived(checklistTotal());
+  const streak = $derived(routineStreak());
+  const weekCount = $derived(routineWeekCount());
+  const marks = $derived(routineMarks());
 
   // jump the wizard to a module's step
   function goToModule(id) {
@@ -18,7 +23,7 @@
   <div class="hud-left">
     <span class="hud-kicker">4 Steps to Hyperfocus</span>
     <div class="acts">
-      {#each ACTS as act}
+      {#each ACTS as act (act)}
         <div class="act" class:done={actCleared(act)}>
           <span class="act-name">{act}</span>
           <div class="stars">
@@ -43,10 +48,18 @@
     {#if won}
       <span class="trophy">🏆 Hyperfocus</span>
     {/if}
+    <div class="checkin" aria-label="Routine adherence">
+      <div class="checkin-score">
+        <b>{streak}</b>
+        <i>day streak · {weekCount}/7</i>
+      </div>
+      <button class:done={marks.morning} onclick={() => toggleRoutineMark("morning")}>AM</button>
+      <button class:done={marks.evening} onclick={() => toggleRoutineMark("evening")}>PM</button>
+    </div>
     <div class="score">
       <div class="score-head"><span>Focus points</span><b>{score}<i>/{max}</i></b></div>
       <div class="bar"><div class="fill" style="width:{pct}%"></div></div>
-      <span class="cleared-note">{cleared}/{MODULES.length} modules cleared</span>
+      <span class="cleared-note">{cleared}/{MODULES.length} modules · {applied}/{applyTotal} actions</span>
     </div>
   </div>
 </div>
@@ -76,6 +89,34 @@
 
   .hud-right { display: flex; align-items: center; gap: 14px; }
   .trophy { font-family: var(--display); font-style: italic; font-weight: 600; color: var(--olive); white-space: nowrap; }
+  .checkin {
+    border: 1px solid var(--line);
+    background: var(--cream);
+    color: var(--walnut);
+    border-radius: 14px;
+    padding: 7px;
+    min-width: 132px;
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    align-items: center;
+    gap: 5px;
+  }
+  .checkin-score { display: grid; line-height: 1.1; padding: 0 3px; }
+  .checkin b { font-family: var(--mono); color: var(--terracotta); font-size: 18px; }
+  .checkin i { font-style: normal; font-size: 9px; color: var(--charcoal-soft); text-transform: uppercase; letter-spacing: .05em; white-space: nowrap; }
+  .checkin button {
+    border: 1px solid var(--line);
+    background: var(--bright);
+    color: var(--charcoal-soft);
+    border-radius: 8px;
+    font: inherit;
+    font-size: 10px;
+    font-weight: 700;
+    min-width: 30px;
+    min-height: 30px;
+    cursor: pointer;
+  }
+  .checkin button.done { border-color: var(--olive); background: var(--olive); color: var(--bright); }
   .score { min-width: 180px; display: grid; gap: 5px; }
   .score-head { display: flex; justify-content: space-between; align-items: baseline; font-size: 11px; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--charcoal-soft); }
   .score-head b { font-family: var(--mono); font-size: 15px; color: var(--terracotta); }

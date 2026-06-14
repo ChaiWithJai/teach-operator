@@ -13,7 +13,6 @@
 
   const current = $derived(STEPS[ui.stepIndex]);
   const draftNames = $derived(Object.keys(ui.drafts));
-  const tunedCount = $derived(MODULES.filter(moduleDone).length);
 
   async function refreshDrafts() {
     ui.drafts = await bridge.loadOutbox();
@@ -121,7 +120,7 @@
         {:else if current.id === "loops"}
           <Loops {go} />
         {:else if current.id === "finish"}
-          <Finish {go} {tunedCount} ask={askCodex} {copyHandoff} tier={ui.tier} />
+          <Finish {go} ask={askCodex} {copyHandoff} tier={ui.tier} />
         {:else}
           <ModuleStep module={current.module} {go} ask={askCodex} tier={ui.tier} />
         {/if}
