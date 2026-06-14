@@ -3,6 +3,24 @@
 The release is done when it **literally does the ADHD job** for one real person (Jai),
 extends to a second person, and runs across Codex, opencode, and Claude Code.
 
+Tracking: GitHub milestone **"v0.1 — Perfect First Release"** (#2), issues #10–#19.
+Tag: `v0.1.0`.
+
+## Status (2026-06-13)
+
+**Shipped:**
+- Gamified console (Vite + Svelte): 9-module curriculum as a game — gold stars, focus points,
+  confetti, report card. Invisible file-bridge handoff to `$HOME/.adhd-copilot/`.
+- Headline job done live: organized Jai's calendar — goal event + weekday needle-mover +
+  evening plan blocks (drafts-first, riding his Shambhavi anchors).
+- Cross-harness: `AGENTS.md` (Codex/opencode) + `CLAUDE.md` + portable `skills/`.
+- Automation: weekday daily focus-brief (in-session cron now; durable launchd doc).
+- ADHD-grade: one-decision-at-a-time, dopamine on every win, no-shame, reduced-motion.
+
+**Tracked in issues (#10–#19):** continued-assistance/daily-weekly views, Gmail/Drive pulls,
+always-on automations, second-user readiness, streaks, shareable report card, full a11y/mobile,
+subtract apply-checklists.
+
 ## Definition of done
 
 ### 1. Does the ADHD job for Jai (dogfood)
