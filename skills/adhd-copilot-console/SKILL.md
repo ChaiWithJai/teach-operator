@@ -30,6 +30,19 @@ reads/writes those files. **You only ever touch the files.** Nothing leaves the 
 3. Tell the user to open the printed URL. The page auto-detects the live bridge; the tier
    pill should read "live · invisible handoff".
 
+## Default connections
+
+ADHD Copilot connects to the user's real context by default, read-first:
+
+- **Google Calendar** — the headline surface. Organize time and set the goal event.
+- **Gmail** — pull open loops, commitments, and delayed replies into triage.
+- **Google Drive** — documents and notes for goals, projects, and source material.
+
+Codex integrates with these natively, so keep it simple: start with Google Drive (everyone
+uses and shares with it); Notion can come later. **Read freely to ground a draft; never write,
+send, or modify anything in these surfaces without explicit per-action approval.** Surface a
+diff/preview in the Codex Channel first.
+
 ## Apprentice loop
 
 Watch `$HOME/.adhd-copilot/intents.log` for new lines (read it at the start of each turn,
