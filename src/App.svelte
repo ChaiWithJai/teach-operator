@@ -1,7 +1,9 @@
 <script>
   import { onMount } from "svelte";
   import { bridge } from "./lib/bridge.js";
-  import { model, ui, STEPS, PHASES, MODULES, stepDone, moduleDone, hydrate, handoffMessage, flash } from "./lib/store.svelte.js";
+  import { model, ui, STEPS, PHASES, MODULES, stepDone, moduleDone, clearedCount, allCleared, hydrate, handoffMessage, flash } from "./lib/store.svelte.js";
+  import { burst } from "./lib/confetti.js";
+  import Hud from "./components/Hud.svelte";
   import Profile from "./components/Profile.svelte";
   import ModuleStep from "./components/ModuleStep.svelte";
   import Loops from "./components/Loops.svelte";
@@ -44,6 +46,21 @@
     saveTimer = setTimeout(() => bridge.saveState($state.snapshot(model)), 400);
   });
 
+  // Celebration: when a module is cleared, pop confetti + a reward toast. The course's
+  // whole thesis is dopamine on completion, so we pay it off.
+  let prevCleared = 0;
+  let celebrationsArmed = false;
+  $effect(() => {
+    const n = clearedCount();
+    if (!celebrationsArmed) { prevCleared = n; celebrationsArmed = true; return; }
+    if (n > prevCleared) {
+      const finished = allCleared();
+      burst(window.innerWidth / 2, window.innerHeight / 3, finished ? 70 : 30);
+      flash(finished ? "🏆 Hyperfocus cleared — you're a finisher" : "⭐ Module cleared");
+    }
+    prevCleared = n;
+  });
+
   onMount(async () => {
     await bridge.detect();
     ui.tier = bridge.tier;
@@ -76,6 +93,8 @@
       <span>{ui.tier === "live" ? "live · invisible handoff" : "paste mode"}</span>
     </div>
   </header>
+
+  <Hud />
 
   <div class="grid">
     <nav class="spine">

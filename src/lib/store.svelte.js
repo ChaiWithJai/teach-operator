@@ -110,6 +110,54 @@ export function setDecision(moduleId, key, value) {
   model.modules[moduleId].decisions[key] = value;
 }
 
+// ── Game layer ──────────────────────────────────────────────────────────────
+// The course preaches dopamine + gamification + celebrating completion, so the
+// console scores itself: a gold star per cleared module, focus points per answer
+// (bonus for the course-aligned "good" answer), acts that complete together.
+
+export const ACTS = ["Subtract", "Add", "Multiply"];
+
+export function clearedCount() {
+  return MODULES.filter(moduleDone).length;
+}
+
+export function allCleared() {
+  return MODULES.every(moduleDone);
+}
+
+export function actModules(phase) {
+  return MODULES.filter((m) => m.phase === phase);
+}
+
+export function actCleared(phase) {
+  const ms = actModules(phase);
+  return ms.length > 0 && ms.every(moduleDone);
+}
+
+export function focusScore() {
+  let pts = 0;
+  for (const m of MODULES) {
+    const saved = model.modules[m.id]?.decisions || {};
+    for (const d of m.decisions) {
+      if (saved[d.key]) pts += saved[d.key] === d.good ? 2 : 1;
+    }
+  }
+  return pts;
+}
+
+export function maxScore() {
+  let t = 0;
+  for (const m of MODULES) t += m.decisions.length * 2;
+  return t;
+}
+
+export function moduleGrade(m) {
+  // null = not cleared; "gold" = all course-aligned; "pass" = cleared with off-book answers.
+  if (!moduleDone(m)) return null;
+  const saved = model.modules[m.id].decisions;
+  return m.decisions.every((d) => saved[d.key] === d.good) ? "gold" : "pass";
+}
+
 export function handoffMessage() {
   return (
     "Use ADHD Copilot. Consume this local-first handoff packet, draft the setup plan, " +
