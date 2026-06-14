@@ -23,13 +23,22 @@ Use bounded context. If source material is missing, work from what is available 
 2. Identify repeated themes.
 3. Identify completed actions.
 4. Identify avoided or delayed actions.
-5. Diagnose focus-system breakdowns without shaming the user.
-6. Extract lessons.
-7. Extract skill candidates.
-8. Identify recurring mental models.
-9. Name open loops.
-10. Recommend one repair bet for next week.
-11. Create continuity memory.
+5. Diagnose which module broke:
+   - phone: distraction or notification breach
+   - environment: calendar/tasks/goal not visible
+   - clarity: goal missing or too vague
+   - prioritization: bottleneck not named
+   - time: open loops floating without when/where
+   - execution: task too large, no first step, hostile self-talk
+   - routines: morning/evening block unprotected or too hard
+   - next_level: no completion reinforcement or no skill extraction
+6. Pick the earliest broken prerequisite in the module order.
+7. Extract lessons without shaming the user.
+8. Extract skill candidates.
+9. Identify recurring mental models.
+10. Name open loops and assign lanes.
+11. Recommend one repair bet for next week tied to the broken module.
+12. Create continuity memory.
 
 ## Output Format
 
@@ -46,6 +55,8 @@ Use bounded context. If source material is missing, work from what is available 
 
 ## Focus System Breakdowns
 
+## Earliest Broken Module
+
 ## Lessons
 
 ## Skill Candidates
@@ -55,6 +66,8 @@ Use bounded context. If source material is missing, work from what is available 
 ## Open Loops
 
 ## One Repair Bet For Next Week
+
+Must include the exact setup change, the visible cue, and the done criterion.
 
 ## Continuity Memory
 ```

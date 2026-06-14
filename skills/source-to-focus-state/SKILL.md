@@ -21,11 +21,37 @@ Do not fetch, store, or republish copyrighted or private source material unless 
 
 1. Identify the source window and retention boundary.
 2. Extract concepts, not raw source text.
-3. Map concepts to focus-system primitives: goal, bottleneck, cue, schedule, task, environment, device rule, routine, repair loop, and skill candidate.
-4. Produce a derived state store.
-5. Label facts, inferences, and recommendations.
-6. Identify which protocols should become ADHD Copilot skills.
-7. Propose a local memory entry.
+3. Extract procedures, not just principles. Every module should yield:
+   - ordered steps
+   - completion gate
+   - visible cue
+   - failure mode
+   - apprentice action
+4. Map procedures to the ADHD Copilot spine:
+   - phone
+   - environment
+   - clarity
+   - prioritization
+   - time
+   - execution
+   - routines
+   - next_level
+5. Convert each module into runtime gates and checklists, not loose advice.
+6. Produce or update a derived state store.
+7. Label facts, inferences, and recommendations.
+8. Identify which protocols should become ADHD Copilot skills.
+9. Propose a local memory entry.
+
+## Quality Bar
+
+Reject loose distillation. A useful state object must answer:
+
+- What exact module comes next?
+- What does the user physically or digitally change?
+- What visible cue proves the change exists?
+- What counts as done?
+- What does Codex draft or inspect?
+- What must not be done without approval?
 
 ## Output Format
 
@@ -39,6 +65,8 @@ Do not fetch, store, or republish copyrighted or private source material unless 
 ## Operating Modules
 
 ## Setup Protocols
+
+Each protocol must include ordered steps and done criteria.
 
 ## Triage Rules
 

@@ -23,20 +23,28 @@ If the user has not approved reading a source, ask before using it.
 
 1. Identify the source window and constraints.
 2. Separate facts, inferences, and unknowns.
-3. Name the user's JTBD: what progress are they trying to make now?
-4. Identify the goal and bottleneck.
-5. Extract open loops, obligations, opportunities, and energy drains.
-6. Sort open loops into do now, schedule, delegate, or park.
-7. Propose 3-7 actions, each with:
+3. Read the trusted-system state: visible goal, current bottleneck, calendar blocks, task lanes, and last repair note.
+4. If phone/environment/clarity are not set, make the missing setup step the first recommendation.
+5. Name the user's JTBD: what progress are they trying to make now?
+6. Identify the goal and bottleneck.
+7. Extract open loops, obligations, opportunities, and energy drains.
+8. Sort open loops into do now, schedule, delegate, or park:
+   - `do_now`: can be completed now in under 10 minutes.
+   - `schedule`: needs a concrete when/where.
+   - `delegate`: needs a drafted ask.
+   - `park`: does not serve the current goal or needs a later review trigger.
+9. Pick one needle-mover that attacks the bottleneck.
+10. Convert the needle-mover into a first step, ownership reframe, immediate benefit, and calendar/task destination.
+11. Propose 3-7 actions, each with:
    - outcome
    - next physical/digital action
    - time estimate
    - source/evidence
    - cost of not doing it
-8. Recommend the best action plan, but ask the user to choose.
-9. Identify apprentice delegation: what Codex or an automation can do next.
-10. Extract skill candidates from repeated work.
-11. Write or propose a local continuity memory.
+12. Recommend the best action plan, but ask the user to choose.
+13. Identify apprentice delegation: what Codex or an automation can do next.
+14. Extract skill candidates from repeated work.
+15. Write or propose a local continuity memory.
 
 ## Output Format
 
@@ -52,6 +60,10 @@ If the user has not approved reading a source, ask before using it.
 ## Open Loop Triage
 
 ## Today's Plan
+
+## Needle Mover
+
+## First Step And Self-Talk
 
 ## Apprentice Delegation
 

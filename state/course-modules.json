@@ -1,7 +1,59 @@
 {
   "name": "adhd-copilot-course-modules",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "source": "ADHD Entrepreneurs — Hyperfocus V3 (Ali). Derived learning objects only; no raw transcript text retained here.",
+  "runtime_protocol": {
+    "module_order": ["phone", "environment", "clarity", "prioritization", "time", "execution", "routines", "next_level"],
+    "rule": "Find the first incomplete module and recommend its next concrete checklist before generic planning.",
+    "completion_gates": {
+      "phone": [
+        "home screen points to calendar/tasks",
+        "impulse apps removed, deleted, or buried behind friction",
+        "notifications near-zero except true urgent channels"
+      ],
+      "environment": [
+        "calendar and tasks are always visible on the default work surface",
+        "active goal is visibly cued",
+        "first work action can be started in one or two moves"
+      ],
+      "clarity": [
+        "one short-term goal exists",
+        "goal lives in the trusted system",
+        "goal is visible without searching"
+      ],
+      "prioritization": [
+        "single bottleneck is named",
+        "next action attacks that bottleneck before lower-leverage work"
+      ],
+      "time": [
+        "each open loop is do_now, schedule, delegate, or park",
+        "scheduled items have a when and where"
+      ],
+      "execution": [
+        "active task has a first physical or digital step",
+        "task has an ownership reframe",
+        "task has an immediate benefit",
+        "misses are treated as system diagnostics"
+      ],
+      "routines": [
+        "evening routine sets up morning",
+        "morning and evening blocks are protected",
+        "each routine starts with an easy likable step",
+        "4-5 successful weekdays counts as success"
+      ],
+      "next_level": [
+        "setup completion is marked",
+        "win is acknowledged",
+        "one repeated breakdown is selected for systematizing"
+      ]
+    },
+    "triage_lanes": {
+      "do_now": "Fast and concrete enough to complete now.",
+      "schedule": "Important but not now; must receive a concrete time window and place.",
+      "delegate": "Better handled by another person, Codex, or automation; draft the ask.",
+      "park": "Not serving the current goal or not ripe; assign a review trigger."
+    }
+  },
   "spine": [
     { "id": "subtract", "label": "Subtract", "intent": "Remove high-friction distraction before adding systems.", "modules": ["phone", "environment"] },
     { "id": "add", "label": "Add", "intent": "Build a trusted single system: goal, bottleneck, when/where, do-it.", "modules": ["clarity", "prioritization", "time", "execution"] },

@@ -45,13 +45,37 @@ Capture:
 
 ## Workflow
 
-1. Name the user's current focus JTBD.
-2. Identify the likely system failure mode: unclear goal, unscheduled task, device distraction, environment mismatch, scope too large, missing cue, or motivation conflict.
-3. Sort open loops into do now, schedule, delegate, or park.
-4. Recommend the first setup plan across phone, computer, calendar, tasks, and environment.
-5. Identify what Codex can do next without taking external action.
-6. Ask for approval before any calendar, task, document, email, file, or device change.
-7. Propose a local continuity memory.
+1. Read the handoff packet and module decisions.
+2. Determine the first incomplete module in this exact order:
+   - phone
+   - environment
+   - clarity
+   - prioritization
+   - time
+   - execution
+   - routines
+   - next_level
+3. If phone or environment is incomplete, recommend that before deeper planning.
+4. Name the user's current focus JTBD.
+5. Identify the likely system failure mode: unclear goal, unscheduled task, device distraction, environment mismatch, scope too large, missing cue, or motivation conflict.
+6. Sort open loops into do now, schedule, delegate, or park using the opt-out rule.
+7. Recommend only the next module's setup checklist plus one cross-module supporting action.
+8. Identify what Codex can do next without taking external action.
+9. Ask for approval before any calendar, task, document, email, file, or device change.
+10. Propose a local continuity memory.
+
+## Module Decision Rules
+
+Use these gates to decide what the user needs next:
+
+- Phone is complete only when the home screen points to calendar/tasks, impulse apps are removed/buried, and notifications are near-zero.
+- Environment is complete only when calendar/tasks are always visible, the goal is visibly cued, and the workspace makes the first action easy.
+- Clarity is complete only when one short-term goal lives in the trusted system.
+- Prioritization is complete only when the single bottleneck is named.
+- Time is complete only when every important open loop is do-now, scheduled, delegated, or parked.
+- Execution is complete only when the current bottleneck task has a first step, ownership reframe, immediate benefit, and recovery script.
+- Routines are complete only when morning/evening protected blocks exist and start with easy, likable steps.
+- Next-level is complete only when the user marks the win and chooses one repeated breakdown to systematize.
 
 ## Output Format
 
@@ -70,6 +94,10 @@ section from the packet; drop sections with no data rather than emitting empty p
 ## Bottleneck
 
 ## Focus System Diagnosis
+
+## First Incomplete Module
+
+## Required Next Checklist
 
 ## Open Loop Triage
 
