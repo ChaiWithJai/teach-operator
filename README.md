@@ -44,8 +44,6 @@ drafted result appears live in the Codex Channel.
 - `daily-personal-action-plan` — create a bounded daily focus brief from calendar/email/docs/thread context.
 - `cognitive-offload-capture` — sort messy thoughts and obligations into do now, schedule, delegate, or park.
 - `source-to-focus-state` — convert bounded source material into derived focus state without retaining raw private content.
-- `thread-to-teach-pack` — turn a Codex thread or project notes into a teachable operating artifact.
-- `skill-candidate-extractor` — identify repeated work that should become reusable skills.
 - `weekly-learning-loop` — diagnose breakdowns and pick one repair bet for next week.
 
 ## Run the control plane
@@ -66,6 +64,18 @@ Use ADHD Copilot. Launch the console and act as the apprentice on my intents.
 
 Codex watches `$HOME/.adhd-copilot/intents.log` and writes drafts to `outbox/`, which the UI
 renders live. Drafts first — nothing touches your calendar, files, or devices without approval.
+
+## Runs in Codex, Claude Code, and opencode
+
+The console (`npm run dev`) and the file store are harness-agnostic; only skill discovery
+differs. Agent operating instructions live in [AGENTS.md](AGENTS.md) (read by Codex and
+opencode) and [CLAUDE.md](CLAUDE.md) (Claude Code). The `skills/*/SKILL.md` are portable.
+
+| Harness | Discovery | Launch |
+|---------|-----------|--------|
+| **Codex** | `.codex-plugin/plugin.json` → `./skills/` | "Use ADHD Copilot. Launch the console and act as the apprentice." |
+| **Claude Code** | `skills/` + `CLAUDE.md` | same prompt |
+| **opencode** | `AGENTS.md` + `skills/` | same prompt |
 
 ## Install as a Codex plugin
 

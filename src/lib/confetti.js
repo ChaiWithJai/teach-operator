@@ -16,6 +16,8 @@ function injectKeyframes() {
 
 // Burst at viewport coords (cx, cy). count scales the celebration.
 export function burst(cx, cy, count = 28) {
+  // Respect reduced-motion: skip the animation entirely (still ADHD-friendly via the toast).
+  if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
   injectKeyframes();
   const layer = document.createElement("div");
   layer.style.cssText = "position:fixed;left:0;top:0;width:0;height:0;z-index:60;pointer-events:none;";
