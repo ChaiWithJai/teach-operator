@@ -1,0 +1,200 @@
+{
+  "name": "adhd-copilot-course-modules",
+  "version": "0.1.0",
+  "source": "ADHD Entrepreneurs — Hyperfocus V3 (Ali). Derived learning objects only; no raw transcript text retained here.",
+  "spine": [
+    { "id": "subtract", "label": "Subtract", "intent": "Remove high-friction distraction before adding systems.", "modules": ["phone", "environment"] },
+    { "id": "add", "label": "Add", "intent": "Build a trusted single system: goal, bottleneck, when/where, do-it.", "modules": ["clarity", "prioritization", "time", "execution"] },
+    { "id": "multiply", "label": "Multiply", "intent": "Make it stick and compound with light structure.", "modules": ["routines", "next_level"] }
+  ],
+  "modules": [
+    {
+      "id": "phone",
+      "phase": "subtract",
+      "title": "Phone Setup",
+      "wistia_id": "s6nd0662fn",
+      "learning_objective": "Re-engineer the phone so the first thing seen drives focus, not distraction.",
+      "concepts": [
+        "You are driven by external cues; the first thing on your home screen dictates the next behavior.",
+        "Friction is a lever: make good defaults easy and impulse apps hard to reach."
+      ],
+      "skills": [
+        "Make the home screen a single calendar widget.",
+        "Audit notifications app-by-app to near-zero (keep only true-urgent).",
+        "Remove/bury impulse apps behind pages of friction."
+      ],
+      "misconception": "A productivity app will fix focus. (Subtraction beats addition here.)",
+      "decisions": [
+        { "key": "home_screen", "prompt": "Home screen is...", "options": ["calendar_widget", "cluttered_apps", "mixed"], "good": "calendar_widget" },
+        { "key": "notifications", "prompt": "Notifications are...", "options": ["near_zero", "some", "everything_on"], "good": "near_zero" },
+        { "key": "impulse_apps", "prompt": "Impulse apps (social) are...", "options": ["buried_or_deleted", "on_home", "one_swipe"], "good": "buried_or_deleted" }
+      ],
+      "apprentice_action": "Draft a per-app notification audit checklist and a home-screen layout the user can apply in 10 minutes.",
+      "transfer_context": "Next time you unlock your phone, the calendar tells you what to do instead of a feed hijacking you."
+    },
+    {
+      "id": "environment",
+      "phase": "subtract",
+      "title": "Environment Setup",
+      "wistia_id": "r5dlv5zux4",
+      "learning_objective": "Arrange the physical space so doing the right thing is the path of least resistance.",
+      "concepts": [
+        "Environment is the precursor to execution; cues in physical space determine behavior.",
+        "A persistent second surface (calendar + to-do always visible) offloads time-blindness and bad memory."
+      ],
+      "skills": [
+        "Get a sturdy desk and comfortable chair (remove avoidance friction).",
+        "Keep calendar + to-do list always visible (second screen / monitor).",
+        "Place goal reminders and one-press triggers where you can't miss them."
+      ],
+      "misconception": "Motivation is internal. (It is mostly environmental cueing.)",
+      "decisions": [
+        { "key": "desk", "prompt": "Desk/chair are...", "options": ["solid_comfortable", "flimsy_avoided", "okay"], "good": "solid_comfortable" },
+        { "key": "always_visible_system", "prompt": "Calendar/to-do are...", "options": ["always_visible", "sometimes", "buried"], "good": "always_visible" },
+        { "key": "goal_in_face", "prompt": "Your goal is...", "options": ["posted_visible", "in_my_head", "nowhere"], "good": "posted_visible" }
+      ],
+      "apprentice_action": "Draft a one-page environment punch list (desk, always-on system, goal placement, one-press triggers).",
+      "transfer_context": "You stop relying on willpower because the room nudges the next action."
+    },
+    {
+      "id": "clarity",
+      "phase": "add",
+      "title": "Clarity",
+      "wistia_id": "stzn3vvbsx",
+      "learning_objective": "Pick one trusted system and one in-your-face short-term goal.",
+      "concepts": [
+        "Trust requires ONE all-encompassing system; scattered tools can't be trusted.",
+        "ADHD is a problem of WHEN and WHERE, not what and how — so tasks must live in a calendar.",
+        "Short-term goals beat distant ones for dopamine and momentum."
+      ],
+      "skills": [
+        "Consolidate to a single system (e.g. calendar + tasks).",
+        "Write one short-term goal as an always-visible event.",
+        "If goal is unclear, invert: list what you do NOT want."
+      ],
+      "misconception": "Sophisticated tools mean more output. (Simplicity that you trust wins.)",
+      "decisions": [
+        { "key": "system", "prompt": "Your productivity system is...", "options": ["one_trusted", "scattered", "none"], "good": "one_trusted" },
+        { "key": "goal_horizon", "prompt": "Your active goal is...", "options": ["short_term_3mo", "long_term_vague", "undefined"], "good": "short_term_3mo" }
+      ],
+      "apprentice_action": "Help the user phrase one short-term goal and where it will live so it's unmissable.",
+      "transfer_context": "You always know the one thing you're aiming at this quarter."
+    },
+    {
+      "id": "prioritization",
+      "phase": "add",
+      "title": "Prioritization",
+      "wistia_id": "bv47lud5if",
+      "learning_objective": "Always know what to work on next by naming the single bottleneck.",
+      "concepts": [
+        "The fundamental algorithm: ask 'what is stopping me?' and attack only that.",
+        "Relentless focus on one bottleneck beats spreading effort thin."
+      ],
+      "skills": [
+        "State the goal, then list what's missing.",
+        "Pick the one bottleneck that moves the needle.",
+        "Pour resources at that single bottleneck until it's gone."
+      ],
+      "misconception": "Do a bit of everything. (Sequence by bottleneck instead.)",
+      "decisions": [
+        { "key": "bottleneck_named", "prompt": "Your #1 bottleneck is...", "options": ["named_clearly", "fuzzy", "unknown"], "good": "named_clearly" }
+      ],
+      "apprentice_action": "Run the 'what is stopping me?' diagnosis on the user's goal and propose the single bottleneck to attack.",
+      "transfer_context": "Every morning you know the one needle-mover, never overwhelmed by the list."
+    },
+    {
+      "id": "time",
+      "phase": "add",
+      "title": "Time",
+      "wistia_id": "4cdhp3fsjx",
+      "learning_objective": "Apply the do-it-now-or-schedule-it (opt-out) rule to every task.",
+      "concepts": [
+        "Opt-out, not opt-in: you must either do it now or schedule a when — never leave it floating.",
+        "Two lists: 'opt out' (incoming) and 'scheduled'. Scheduling closes the open loop and frees working memory."
+      ],
+      "skills": [
+        "For each task ask: can I do it right now?",
+        "If not, assign a concrete time and move it to 'scheduled'.",
+        "Trust the system so you stop holding tasks in your head."
+      ],
+      "misconception": "I'll get to it later. ('Sometime' never comes; assign a when.)",
+      "decisions": [
+        { "key": "tasks_have_when", "prompt": "Your tasks...", "options": ["all_have_a_when", "some", "float_indefinitely"], "good": "all_have_a_when" },
+        { "key": "two_lists", "prompt": "Opt-out + scheduled split is...", "options": ["set_up", "partial", "not_set_up"], "good": "set_up" }
+      ],
+      "apprentice_action": "Take the user's open loops and sort each into do-now or a proposed scheduled time block.",
+      "transfer_context": "Nothing rots on a list; every commitment has a home in time."
+    },
+    {
+      "id": "execution",
+      "phase": "add",
+      "title": "Execution",
+      "wistia_id": "v61uur9e9x",
+      "learning_objective": "Start on demand using first-step framing, ownership, selling-yourself, and self-love.",
+      "concepts": [
+        "Environment is the precursor; self-talk is the second half.",
+        "Think only of the FIRST step (a pebble, not a boulder) to summon enough dopamine.",
+        "Reframe 'have to' → 'get to / want to' (ownership over discipline).",
+        "Sell yourself on the immediate benefit; never beat yourself up — blame the system, stay curious."
+      ],
+      "skills": [
+        "Shrink any task to its trivially-small first step.",
+        "Rephrase tasks as choices you want.",
+        "Attach the immediate benefit to the task.",
+        "On a missed day, diagnose the system instead of self-criticism."
+      ],
+      "misconception": "Discipline = forcing yourself. (Ownership + first step + self-love work better for ADHD.)",
+      "decisions": [
+        { "key": "first_step_habit", "prompt": "You think in...", "options": ["first_steps", "whole_projects", "mixed"], "good": "first_steps" },
+        { "key": "self_talk", "prompt": "On a bad day you...", "options": ["blame_the_system", "beat_yourself_up", "mixed"], "good": "blame_the_system" }
+      ],
+      "apprentice_action": "Rewrite the user's stuck task as a first-step + an ownership reframe + the immediate benefit.",
+      "transfer_context": "You can start the hard thing in seconds and recover from a miss without spiraling."
+    },
+    {
+      "id": "routines",
+      "phase": "multiply",
+      "title": "Routines",
+      "wistia_id": "31865pw1aj",
+      "learning_objective": "Set minimal morning/evening structure that is fun and stick-to-able.",
+      "concepts": [
+        "The morning begins in the evening; the evening routine sets up the next day.",
+        "Right balance of structure and spontaneity; protect unscheduled blocks.",
+        "Start with an easy, likable first step; the goal is consistency, not perfection (4–5/7 is a win)."
+      ],
+      "skills": [
+        "Define a short morning and evening routine starting with something you enjoy.",
+        "Protect 'my time' blocks where nobody can schedule you.",
+        "Pick one needle-mover for tomorrow the night before."
+      ],
+      "misconception": "Routines must be rigid and complete. (Minimal + fun + protected beats perfect.)",
+      "decisions": [
+        { "key": "evening_routine", "prompt": "Evening routine is...", "options": ["simple_set", "none", "too_complex"], "good": "simple_set" },
+        { "key": "protected_blocks", "prompt": "Morning/evening 'my time' is...", "options": ["protected", "interruptible", "none"], "good": "protected" }
+      ],
+      "apprentice_action": "Draft a minimal morning + evening routine (easy first step, protected window, one needle-mover) from the user's constraints.",
+      "transfer_context": "Most days start and end on rails you actually enjoy, so the system survives bad days."
+    },
+    {
+      "id": "next_level",
+      "phase": "multiply",
+      "title": "Next Level",
+      "wistia_id": "pdrhpam7b3",
+      "learning_objective": "Reinforce completion and convert recurring breakdowns into reusable systems.",
+      "concepts": [
+        "ADHD thrives on positive reinforcement; celebrate finishing to generate momentum.",
+        "Recurring friction is a signal to build a reusable system (or Codex skill)."
+      ],
+      "skills": [
+        "Mark setup as complete and acknowledge the win.",
+        "Name one recurring breakdown worth systematizing next."
+      ],
+      "misconception": "You're done after setup. (Compounding comes from turning breakdowns into systems.)",
+      "decisions": [
+        { "key": "completion_marked", "prompt": "Setup completion is...", "options": ["celebrated", "ignored"], "good": "celebrated" }
+      ],
+      "apprentice_action": "Summarize what's now in place, celebrate it, and propose one recurring breakdown to turn into a reusable skill.",
+      "transfer_context": "Each loop you close makes the next one cheaper — the system compounds."
+    }
+  ]
+}

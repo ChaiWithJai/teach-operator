@@ -1,0 +1,48 @@
+{
+  "name": "teach-operator",
+  "version": "0.4.0",
+  "description": "ADHD Copilot is a Codex plugin for people suspicious or newly diagnosed with ADHD, founders, and high-agency builders who want to understand how their brain can work with AI.",
+  "author": {
+    "name": "Jai Bhagat",
+    "url": "https://chaiwithjai.com"
+  },
+  "homepage": "https://teach.chaiwithjai.com",
+  "repository": "https://github.com/ChaiWithJai/teach-operator",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "skills",
+    "productivity",
+    "learning",
+    "adhd",
+    "focus",
+    "cognitive-offloading",
+    "adhd-copilot",
+    "calendar",
+    "action-plans",
+    "tasks"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "ADHD Copilot",
+    "shortDescription": "A local-first personal control plane for ADHD-aware AI focus systems.",
+    "longDescription": "ADHD Copilot helps people who suspect or were diagnosed late with ADHD, plus founders and high-agency builders, set up a personal AI control plane. It uses bounded context and Codex workflows to turn goals, bottlenecks, devices, calendar, tasks, and open loops into a focus system the user can inspect, approve, and repair.",
+    "developerName": "Chai With Jai",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://teach.chaiwithjai.com",
+    "privacyPolicyURL": "https://teach.chaiwithjai.com/privacy",
+    "termsOfServiceURL": "https://teach.chaiwithjai.com/terms",
+    "brandColor": "#974529",
+    "defaultPrompt": [
+      "Use ADHD Copilot. Launch the control-plane console and act as the apprentice on my intents.",
+      "Use ADHD Copilot to organize my calendar and set my goal as a calendar event, drafts first.",
+      "Use ADHD Copilot to triage my open loops into do now, schedule, delegate, or park.",
+      "Use ADHD Copilot to create today's focus brief from bounded calendar, email, docs, and thread context.",
+      "Use ADHD Copilot to diagnose where my focus system broke and propose one repair."
+    ]
+  }
+}

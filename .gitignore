@@ -1,0 +1,12 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+runs/
+memories/private/
+source-material/
+node_modules/
+__pycache__/
+dist/
+.vite/
+.playwright-mcp/

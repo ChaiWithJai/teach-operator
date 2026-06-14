@@ -1,0 +1,21 @@
+{
+  "name": "teach-operator",
+  "interface": {
+    "displayName": "ADHD Copilot"
+  },
+  "plugins": [
+    {
+      "name": "teach-operator",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/ChaiWithJai/teach-operator.git",
+        "ref": "main"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}
